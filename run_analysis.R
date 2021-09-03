@@ -1,5 +1,5 @@
-# for this script to run the data set must be in the working directory e.g.:
-#setwd("C:\\Users\\wilkinsonj\\Documents\\Getting and Cleaning Data\\FinalAssignment\\Dataset\\UCI HAR Dataset")
+# for this script to run the data set must be in the working directory e.g. in windows:
+#setwd("C:\\Users\\usernamexx\\Documents\\Getting and Cleaning Data\\FinalAssignment\\Dataset\\UCI HAR Dataset")
 
 install.packages("dplyr")
 install.packages("data.table")
