@@ -3,7 +3,9 @@ Final Assignment for Getting and Cleaning Data
 There are 3 files besides this one.
 
 CodeBook.md - describes all the variables and transforms
+
 run_analysis.R - R script that processes data downloaded and creates the file tidydata.txt
+
 tidydata.txt - the final output: the average of each variable for each activity and each subject, 88 columns and 180 rows
 
 Downloaded data is from here:
