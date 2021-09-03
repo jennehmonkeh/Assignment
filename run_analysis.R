@@ -55,7 +55,7 @@ thedataset <- mergeddataset %>% select(subject, activity, matches('mean|std'))
 # Item 3:  Use descriptive activity names to name the activities in the data set
 thedataset$activity <- factor(thedataset$activity,labels = activity_names$V2)
 
-# Item 4: Label the data set with descriptive variable names
+# Item 4: Label the data set with descriptive variable names (still horrendous)
 names(thedataset)<-sub("tGravity","timegravit",names(thedataset))
 names(thedataset)<-sub("tBody","timebody",names(thedataset))
 names(thedataset)<-sub("fBodyBody","frequencybody",names(thedataset))
@@ -65,10 +65,13 @@ names(thedataset)<-sub("Mag","magnitude",names(thedataset))
 names(thedataset)<-sub("Freq","frequency",names(thedataset))
 names(thedataset)<-sub("Gyro","gyroscope",names(thedataset))
 names(thedataset)<-sub("Jerk","jerk",names(thedataset))
-names(thedataset)<-gsub("-", "", names(thedataset))
-names(thedataset)<-sub("\\(", "", names(thedataset))
-names(thedataset)<-sub("\\)", "", names(thedataset))
+names(thedataset)<-gsub("-","", names(thedataset))
+names(thedataset)<-gsub("\\(","", names(thedataset))
+names(thedataset)<-gsub("\\)","", names(thedataset))
+names(thedataset)<-gsub("\\,","", names(thedataset))
 names(thedataset)<-sub("std", "standarddevation", names(thedataset))
+names(thedataset)<-gsub("Mean", "mean", names(thedataset))
+
 
 # Item 5: Create tidy data set with the average of each variable for each activity and each subject
 tidydata <- thedataset %>% group_by(subject,activity) %>% summarise_all(mean)
