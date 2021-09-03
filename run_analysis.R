@@ -56,7 +56,7 @@ thedataset <- mergeddataset %>% select(subject, activity, matches('mean|std'))
 thedataset$activity <- factor(thedataset$activity,labels = activity_names$V2)
 
 # Item 4: Label the data set with descriptive variable names (still horrendous)
-names(thedataset)<-sub("tGravity","timegravit",names(thedataset))
+names(thedataset)<-sub("tGravity","timegravity",names(thedataset))
 names(thedataset)<-sub("tBody","timebody",names(thedataset))
 names(thedataset)<-sub("fBodyBody","frequencybody",names(thedataset))
 names(thedataset)<-sub("fBody","frequencybody",names(thedataset))
